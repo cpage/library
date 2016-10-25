@@ -12,5 +12,5 @@ module.exports = function (app) {
         done(null, user);
     });
 
-    require('./strategies/passport-local.strategy')();
+    require('./strategies/passport-local-strategy')();
 };
