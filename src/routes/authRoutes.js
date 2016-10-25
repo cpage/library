@@ -1,5 +1,6 @@
 let app = require('express');
 let mongo = require('mongodb').MongoClient;
+let passport = require('passport');
 
 let authRouter = app.Router();
 
@@ -11,7 +12,7 @@ let router = function () {
                 var userColl = db.collection('users');
                 let user = {
                     username: req.body.username,
-                    passowrd: req.body.password
+                    password: req.body.password
                 };
 
                 userColl.insert(user, function (err, results) {
@@ -22,6 +23,14 @@ let router = function () {
                 });
             });
         });
+
+    authRouter.route('/signIn')
+        .post(passport.authenticate('local', {
+            failureRedirect: '/'
+        }), function (req, res) {
+            res.redirect('/auth/profile');
+        });
+
     authRouter.route('/profile')
         .get(function (req, res) {
             res.json(req.user);

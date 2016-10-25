@@ -27,10 +27,12 @@ app.use(express.static('public'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 app.use(session({
-    secret: 'library'
+    secret: 'library',
+    saveUninitialized: true,
+    resave: true
 }));
 require('./config/passportConfig')(app);
 

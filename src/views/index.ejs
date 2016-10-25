@@ -112,12 +112,17 @@
 							<br>
 							<div class="col-md-2 col-sm-3 text-center">
 								Sign in
+								<form action="/auth/signIn" name="signInForm" method="POST">
+									<input name="username" id="username"><br />
+									<input name="password" id="password" type="password"><br/>
+									<input type="submit" value="Sign in">
+								</form>
 							</div>
 							<div class="col-md-10 col-sm-9">
 								Sign up
 								<form action="/auth/signUp" name="signUpForm" method="POST">
-									<input name="username" id="username">
-									<input name="password" id="password" type="password">
+									<input name="username" id="username"><br />
+									<input name="password" id="password" type="password"><br/>
 									<input type="submit" value="Sign up">
 								</form>
 							</div>
