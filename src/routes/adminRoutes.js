@@ -4,19 +4,23 @@ let mongo = require('mongodb').MongoClient;
 let books = [
         {
             title: 'Ender\'s Game',
-            author: 'Orson Scott Card'
+            author: 'Orson Scott Card',
+            bookId: 375802
         },
         {
             title: 'The Martian',
-            author: 'Andy Weird'
+            author: 'Andy Weir',
+            bookId: 18007564
         },
         {
             title: 'Harry Potter',
-            author: 'J.K. Rowling'
+            author: 'J.K. Rowling',
+            bookId: 3
         },
         {
             title: 'Inferno',
-            author: 'Dan Brown'
+            author: 'Dan Brown',
+            bookId: 17212231
         }
     ];
 
